@@ -1,0 +1,50 @@
+// Color, States & Theme
+color-light = #fff
+color-dark = #000
+
+// Social Color Definition
+$social = {
+	behance: #1769ff,
+	facebook: #3b5998,
+	google: #dd4b39,
+	instagram: #125688,
+	linkedin: #0075a0,
+	twitter: #00aced,
+	whatsapp: #4dc247,
+	youtube: #bb0000
+}
+
+// EX: color-facebook = color-value
+for name, value in $social
+	define( 'color-' + name, value )
+
+// Colors Variable
+color-red = #ff3378
+
+// Grid Settings
+include-grid = false
+grid-gutter = true
+gutter-width = 15px
+
+// Columns Settings
+cols = 12
+cols-name = '' '-sd' '-xsm' '-sm' '-md' '-lg' '-xlg' '-hd'
+
+// Resolution Devices
+$phone			= 480px // sd 
+$xsm			= 540px // xsm
+$sm				= 640px // sm
+$tablet			= 768px // md
+$laptop			= 960px // lg
+$desktop		= 1280px // xlg
+$hd				= 1440px // hd
+
+// Breakpoints
+device-scale = 320px 480px 540px 640px 768px 960px 1280px 1440px
+
+app-width = 960px
+app-gap = 10px
+
+// Developer
+// depth()
+// rules()

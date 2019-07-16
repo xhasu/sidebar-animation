@@ -1,0 +1,18 @@
+ /** 
+ * Ellipsis text wrapping disabled by default.
+ * 
+ * Synopsis:
+ * 
+ * 		ellipsis
+ * 
+ * Example:
+ * 		
+ * 		ellipsis()
+ * 
+ */
+
+ellipsis(no-wrap = true)
+  if no-wrap
+    white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis

@@ -1,0 +1,49 @@
+// navigation
+.icon-nav
+	absolute: top 12px right 12px
+	cursor pointer
+	width: w = 32px
+	z-index 100
+	span
+		background-color grey-900
+		box-sizing border-box
+		display block
+		margin-bottom 4px
+		border-radius 2px
+		size: 100% 4px
+		transition background-color ease-out .2s
+		
+		&:first-child
+			width (w + 12 ) * 0.5
+			margin-left (w - 12 ) * 0.5
+		
+		&:last-child
+			width (w + 12 ) * 0.5
+	
+	&:hover
+		span
+			background-color grey-800
+	
+	&.white
+		span
+			background-color grey-400
+		
+		&:hover
+			span
+				background-color white
+	
+	&.fixed
+		position fixed
+	
+	+above( $tablet )
+		display none
+
+.navbar
+	position relative
+	box-sizing border-box
+	li
+		display inline-block
+		span
+			display block
+			line-height 1
+			padding 16px 10px

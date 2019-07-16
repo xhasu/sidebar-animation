@@ -1,0 +1,25 @@
+/** 
+ * Clearing floats utility
+ * 
+ * Synopsis:
+ * 
+ * 		clearfix
+ * 
+ * Example:
+ * 		
+ * 		clearfix()
+ * 
+ */
+
+
+clearfix()
+	&:before
+	&:after
+		content " "
+		display block
+		font-size 0
+		height 0
+		visibility hidden
+		clear both
+	zoom 1
+	

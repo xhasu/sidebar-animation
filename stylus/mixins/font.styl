@@ -1,0 +1,20 @@
+/** 
+ * Font utility
+ * 
+ * Synopsis:
+ * 
+ * 		font-source: <path>
+ * 
+ * Example:
+ * 		
+ * 		font-source '../fonts/name-font'
+ * 
+ */
+
+
+font-source(path)
+	src url(path+'.eot')
+	src url(path+'.eot?#iefix') format('embedded-opentype'), url(path+'.woff') format('woff'), url(path+'.ttf') format('truetype'), url(path+'.svg') format('svg')
+	font-weight normal
+	font-style normal
+	

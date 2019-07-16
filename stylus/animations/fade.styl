@@ -1,0 +1,86 @@
+
+// fadeIn
+.fadeIn
+	opacity 0
+	&.go
+		animation-name fadeIn
+
+@keyframes fadeIn
+	0%
+		opacity 0
+	100%
+		opacity 1
+
+// fadeOut
+.fadeOut
+	opacity 1
+	&.go
+		animation-name fadeOut
+		
+@keyframes fadeOut
+	0%
+		opacity 1
+	100%
+		opacity 0
+
+
+// fadeInUp
+.fadeInUp
+	opacity 0
+	transform translate3d(0, -100%, 0)
+	&.go
+		animation-name fadeInUp
+
+@keyframes fadeInUp
+	0%
+		opacity 0
+		transform translate3d(0, -100%, 0)
+	100%
+		opacity 1
+		transform none
+
+// 	fadeInDown	
+.fadeInDown
+	opacity 0
+	transform translate3d(0, 100%, 0)
+	&.go
+		animation-name fadeInDown
+
+@keyframes fadeInDown
+	0%
+		opacity 0
+		transform translate3d(0, 100%, 0)
+	100%
+		opacity 1
+		transform none
+		
+// 	fadeInLeft	
+.fadeInLeft
+	opacity 0
+	transform translate3d( -100%, 0, 0)
+	&.go
+		animation-name fadeInLeft
+
+@keyframes fadeInLeft
+	0%
+		opacity 0
+		transform translate3d( -100%, 0, 0)
+	100%
+		opacity 1
+		transform none
+		
+
+// 	fadeInRight	
+.fadeInRight
+	opacity 0
+	transform translate3d(100%, 0, 0)
+	&.go
+		animation-name fadeInRight
+
+@keyframes fadeInRight
+	0%
+		opacity 0
+		transform translate3d(100%, 0, 0)
+	100%
+		transform none
+		opacity 1

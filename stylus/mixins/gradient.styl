@@ -1,0 +1,17 @@
+/*
+ * Create a linear gradient with the given start position
+ * and variable number of color stops.
+ *
+ * Examples:
+ *
+ *    background: linear-gradient(top, red, green, blue)
+ *    background: linear-gradient(bottom, red, green 50%, blue)
+ *    background: linear-gradient(bottom, red, 50% green, blue)
+ *    background: linear-gradient(bottom, red, 50% green, 90% white, blue)
+ *
+ */
+
+linear-gradient(start, stops...)
+  error('color stops required') unless length(stops)
+
+  unquote('linear-gradient(' + join(', ',arguments) + ')')

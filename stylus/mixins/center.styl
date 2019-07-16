@@ -1,0 +1,43 @@
+/** 
+ * Center tag utility
+ * 
+ * Synopsis:
+ * 
+ * 		center: <max-width> [boolean]
+ * 
+ * Example:
+ * 		
+ * 		center: 768px
+ * 		
+ * 		yield:
+ * 			max-width 768px
+ * 			width 100%
+ * 			margin 0 auto
+ * 		
+ * 		center: 768px false
+ * 		yield:
+ * 			max-width 768px
+ * 			width 100%
+ * 
+ */
+
+box-center()
+	absolute: top 50% left 50%
+	transform translate(-50%, -50%)
+
+box-vertical-center()
+	absolute: left 50%
+	transform translate(0, -50%)
+	
+box-horizontal-center()
+	absolute: top 50%
+	transform translate(-50%, 0)
+	
+margin-center()
+	margin-left auto
+	margin-right auto
+
+center(size)
+	max-width size
+	width 100%
+	margin-center()

@@ -1,0 +1,49 @@
+/** 
+ * Functions utilities
+ * 
+ * Synopsis:
+ * 
+ * 		reset-{tag} ()
+ * 
+ * Example:
+ * 		
+ * 		for name tag: img
+ * 		img
+ * 			reset-img()
+ * 
+ */
+ 
+img-responsive()
+	display block
+	size: 100% auto
+	margin-left auto
+	margin-right auto
+
+img-reset()
+	display block
+	margin-bottom 0
+
+no-events()
+	pointer-events none
+	user-select none
+
+set-background(path)
+	background-position center center
+	background-repeat no-repeat
+	background-image url(path)
+
+triangle(direction, width, color, back-color = transparent )
+	display block
+	content " "
+	width 0
+	height 0
+	border width solid back-color
+	
+	if direction == up || direction == down-left || direction == down-right
+		border-bottom-color color
+	if direction == down || direction == up-left || direction == up-right
+		border-top-color color
+	if direction == left || direction == down-right || direction == up-right
+		border-right-color color
+	if direction == right || direction == down-left || direction == up-left
+		border-left-color color

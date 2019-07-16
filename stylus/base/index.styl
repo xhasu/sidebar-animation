@@ -1,0 +1,116 @@
+// Base
+$font-size-base = 16px
+$line-height-base = 24px
+
+*
+	-webkit-tap-highlight-color alpha(#000, 0)
+	-webkit-tap-highlight-color transparent
+
+html
+	height 100%
+	font-size 1em
+	
+body
+	font-size $font-size-base
+	line-height $line-height-base
+	min-width 320px
+	min-height 100%
+	min-height 100vh
+
+p
+	margin-top 0
+	margin-bottom 12px
+
+b
+strong
+.strong
+	font-weight 700
+
+i
+	font-style italic
+	
+blockquote
+	margin 0 24px 12px 24px
+
+ul
+ol
+	padding 0
+	margin 0
+
+ul
+	list-style none
+
+li
+	padding 0
+
+a
+	color inherit
+	outline none
+	text-decoration none
+
+/**
+ *	Calc:
+ *		line-height: BaseFont / TargetFont
+ *	Example: h1
+ *		baseFont = 24
+ *		line-height: (baseFont * 2) / 28
+ *		line-height: 1.7142
+ */
+	
+h6
+.h6
+h5
+.h5
+h4
+.h4
+h3
+.h3
+h2
+.h2
+h1
+.h1
+	box-sizing border-box
+	font-weight inherit
+	// margin ($line-height-base / 2 ) 0
+	margin-bottom 12px
+	margin-top 0
+
+h6
+.h6
+	font-size 18px
+	line-height 1.333
+
+h5
+.h5
+	font-size 20px
+	line-height 1.2
+
+h4
+.h4
+	font-size 22px
+	line-height 1.091
+	
+h3
+.h3
+	font-size 24px
+	line-height 1
+	
+h2
+.h2
+	font-size 26px
+	line-height 1.846
+	text-align center
+	
+h1
+.h1
+	font-size 28px
+	line-height 1.714
+	text-align center
+	
+small
+.small
+	display block
+	font-size 14px
+	line-height 1.714
+	margin-bottom 6px
+

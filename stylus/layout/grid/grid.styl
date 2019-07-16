@@ -1,0 +1,65 @@
+/** 
+ * Grid system
+ * 
+ * Example:
+ * 
+ * 		make-grid( 'class', gutter = false )
+ * 
+ * 		list = 'colName' [, 'colName', .. ]
+ * 		columns = 12
+ * 
+ * 		setup-grid( list, columns )
+ * 		generate-grid( 'colName' , columns  ) 
+ * 		
+ * 		@media 'config'
+ * 			generate-grid( 'colName' , columns  ) 
+ * 
+ */
+ 
+
+-setup-grid( arrText, columns, gutter )
+	clearfix()
+	[class^="col-"]
+		box-sizing border-box
+		float left
+		width 100%
+		min-height 1px
+		if gutter
+			padding-left (gutter-width/2)
+			padding-right (gutter-width/2)
+				
+
+initial-grid( arrText, columns )
+	for text, i in arrText
+		for c, j in 0...columns
+			if i is 0
+				.col-{j+1}
+					width (100/columns) * (j+1) %
+			else
+				.col{text}-{j+1}
+					width 100%
+
+generate-grid( text, columns )
+	for c, i in 0...columns
+		.col{text}-{i+1}
+			max-width (100/columns) * (i+1) %
+			
+
+make-grid( class, gutter = false )
+	{class}
+		-setup-grid( cols-name, cols, gutter )
+		if gutter
+			margin-left (gutter-width/-2)
+			margin-right (gutter-width/-2)
+
+
+// Grid system
+make-grid('.grid', grid-gutter)
+
+// initial-grid( cols-name, cols )
+for n in 0...( length(device-scale) )
+	if n is 0
+		generate-grid( cols-name[n], cols )
+	else
+		@media only screen and (min-width device-scale[n])
+			generate-grid( cols-name[n], cols )

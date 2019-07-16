@@ -1,0 +1,66 @@
+// media query
+
+-get-scale-number( scale-name )
+	for list-item, i in device-scale
+		if list-item is scale-name
+			return i
+	return false
+
+print-query(query)
+	condition = 'only screen %s' % query
+	@media condition
+		{block}
+	
+below(scale-point)
+	if unit( scale-point ) is 'px'
+		breakpoint = -get-scale-number( scale-point )
+	
+	if breakpoint is false
+		screen-size = scale-point
+	else
+		screen-size = device-scale[breakpoint]
+
+	query = 'and (max-width: %s)' % screen-size
+	+print-query( query )
+		{block}
+		
+above(scale-point)
+	if unit( scale-point ) is 'px'
+		breakpoint = -get-scale-number( scale-point )
+	
+	if breakpoint is false
+		screen-size = ( scale-point + 1)
+	else
+		screen-size = (device-scale[breakpoint] + 1)
+		
+	query = 'and (min-width: %s)' % screen-size
+	+print-query( query )
+		{block}
+
+between(scale-point-min, scale-point-max)
+	if unit( scale-point-min ) is 'px'
+		breakpoint-min = -get-scale-number( scale-point-min )
+	if unit( scale-point-max ) is 'px'
+		breakpoint-max = -get-scale-number( scale-point-max )
+	
+	if breakpoint-min is false
+		screen-size-min = scale-point-min + 1
+	else
+		screen-size-min = device-scale[breakpoint-min] + 1
+	
+	if breakpoint-max is false
+		screen-size-max = scale-point-max
+	else
+		screen-size-max =  device-scale[breakpoint-max]
+		
+	query = 'and (min-width: %s)' % (screen-size-min) + 'and (max-width: %s)' % (screen-size-max)
+	+print-query( query )
+		{block}
+
+at(scale-point)
+	screen-size-min = device-scale[scale-point] + 1
+	screen-size-max = device-scale[scale-point + 1]
+	
+	query = 'and (min-width: %s)' % (screen-size-min) + 'and (max-width: %s)' % (screen-size-max)
+	+print-query( query )
+		{block}

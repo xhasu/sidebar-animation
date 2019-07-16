@@ -1,0 +1,106 @@
+// sidebar navigation
+
+.sidebar
+	fixed: top right bottom left
+	padding 10px 40px
+	box-sizing border-box
+	z-index 1
+	
+	&-close
+		absolute: top right
+		display inline-block
+		text-align center
+		color white
+		cursor pointer
+		padding 10px
+		box-sizing border-box
+		z-index 1
+		
+		i.material-icons
+			font-size 18px
+			line-height 1
+	
+	&-head
+		position relative
+		padding 10px 0
+		color white
+		transform translate(20px, 0)
+		transition all 200ms ease-in
+		opacity .1
+		
+		.head-title
+			font-size 10px
+			line-height 1
+			margin-bottom 4px
+		
+		.head-value
+			font-size 32px
+			font-weight 700
+			line-height 1
+			margin-bottom 0
+	
+	&-nav
+		absolute: top 50% left -20px
+		transform translate(0, -50%)
+		transition all 400ms ease-out
+		opacity .2
+		z-index 1
+		
+	.nav-item
+		position relative
+		display grid
+		width 210px
+		grid-template-columns 40px 1fr
+		justify-content center
+		align-items center
+		font-size 14px
+		line-height 1
+		opacity .4
+	
+		padding 15px 0
+		box-sizing border-box
+		
+		&.active
+			opacity 1
+			
+		&:after
+			content ""
+			clear both
+			absolute: bottom right left 40px
+			height 1px
+			background-color white
+			opacity .4
+
+	.item-icon
+		text-align center
+		color white
+		i.material-icons
+			font-size 18px
+	
+	.item-name
+		padding 0 10px
+		color white
+		text-align left
+		box-sizing border-box
+	
+
+	&-actions
+		absolute: bottom -70px right left
+		transition all 200ms ease-in
+		opacity .6
+		z-index 1
+		text-align center
+
+.open
+	.sidebar
+		&-head
+			opacity 1
+			transform translate(0, 0)
+			
+		&-nav
+			opacity 1
+			left 40px
+		
+		&-actions
+			bottom 25px
+			opacity 1

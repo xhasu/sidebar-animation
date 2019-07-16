@@ -1,0 +1,25 @@
+
+.page
+	position relative
+	transform translate3d(0, 0, 0)
+	min-height 100vh
+	background color-light
+	padding 30px 25px
+	box-sizing border-box
+	transition all 400ms ease-out
+
+
+.page-box
+	position relative
+	overflow hidden
+	perspective 1000px
+	z-index 10
+	
+.open
+	.page
+		transform translate3d(85%, 0, -200px)
+		border-radius 30px
+		box-shadow 0 4px 8px alpha(black, .2)
+		
+	.page-box
+		z-index 0
